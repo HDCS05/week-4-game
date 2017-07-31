@@ -14,40 +14,18 @@ $(function () {
 							Math.floor((Math.random() * 12) + 1),
 							Math.floor((Math.random() * 12) + 1)];
 	console.log(vpicsvalues);
+
 	// loop to create crystals for every value in the array
 	faddpics();
+
 	//the event on click applied to all the images created take as reference the css attribute name
-	$(".imagesize").on("click", function() {
-		//extract the value of the image using the data attribute
-		//instruction $(this) will use the value of the clicked image
-		//use of .attr("name of the data attribute") help us in this task
-		//convert the value of the data to a number since its a string by default
-		var vvalueimg = ($(this).attr("dataimgvalue"));
-		console.log("vvalueimg");
-		vvalueimg = Number(vvalueimg);
-		//add the value of the image to the value acumulated to the target number
-		vtargetn += vvalueimg;
-		//display it on the doc
-		$("#dtargetnumber").text(vtargetn);
-		if (vtargetn == vrandomn) {
-			alert("You win!");
-			vwins++;
-			$("#dwins").text(vwins);
-			fnewvals ();
-			//faddpics();
-			console.log(vpicsvalues);
-		} else if (vtargetn > vrandomn) {
-			alert ("You lose!!");
-			vlosses++;
-			$("#dlosses").text(vlosses);
-			fnewvals();
-			//faddpics();
-			console.log(vpicsvalues);
-		}
-	});
+	listenclick();
+	
 
 	function fnewvals() {
-		$("#cristals").detach();
+		bindEvents();
+		$("#cristals").empty();
+		
 		vtargetn = 0;
 		vrandomn = Math.floor((Math.random() * 120) + 19);
 		$("#drandomnumber").text(vrandomn);
@@ -57,6 +35,7 @@ $(function () {
 							Math.floor((Math.random() * 12) + 1),
 							Math.floor((Math.random() * 12) + 1)];
 		faddpics();
+		listenclick();
 	};
 
 	function faddpics() {
@@ -81,6 +60,38 @@ $(function () {
 			//each iteration a pic will be added to the div in the page
 			$("#cristals").append(vpicscristal);
 		}
+	};
+
+	function bindEvents(){
+    	$('*').off();
+	};
+
+	function listenclick() {
+		//the event on click applied to all the images created take as reference the css attribute name
+		$(".imagesize").on("click", function() {
+			//extract the value of the image using the data attribute
+			//instruction $(this) will use the value of the clicked image
+			//use of .attr("name of the data attribute") help us in this task
+			//convert the value of the data to a number since its a string by default
+			var vvalueimg = ($(this).attr("dataimgvalue"));
+			console.log("vvalueimg");
+			vvalueimg = Number(vvalueimg);
+			//add the value of the image to the value acumulated to the target number
+			vtargetn += vvalueimg;
+			//display it on the doc
+			$("#dtargetnumber").text(vtargetn);
+			if (vtargetn == vrandomn) {
+				alert("You win!");
+				vwins++;
+				$("#dwins").text(vwins);
+				fnewvals ();
+			} else if (vtargetn > vrandomn) {
+				alert ("You lose!!");
+				vlosses++;
+				$("#dlosses").text(vlosses);
+				fnewvals();
+			}
+		});
 	};
 
 });
