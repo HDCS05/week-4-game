@@ -1,4 +1,37 @@
-.crystal-image {
-	width: 300px;
-	height: 300px;
+.imagesize {
+	margin: auto;
+    width: 25%;
+    height: 150px;
+    border: 2px solid green;
+    padding: 5px;
 }
+
+.lettercourgette {
+	font-family: 'Courgette', cursive;
+	text-align: justify;
+	color: darkgreen;
+}
+
+.letterlobster {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+}
+
+.dblsizef {
+	font-size: 2em;
+}
+
+.trpsizef {
+	font-size: 3em;
+}
+
+body {
+	background: linear-gradient(to top right, #33cc33 0%, #ffff66 100%);
+}
+
+body h1 {
+	font-family: 'Acme', sans-serif;
+	text-align: center;
+	font-size: 5em;
+}
+

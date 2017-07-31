@@ -4,9 +4,111 @@
 
 		<title>Crystal Collector Game</title>
 
+		<!-- Viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- special google font -->
+		<link href="https://fonts.googleapis.com/css?family=Acme|Pacifico|Lobster" rel="stylesheet">
+
+		<!-- Custom files -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 	</head>
 
 	<body>
+
+		<div class="container-fluid">
+			<h1>The Crystal Collector Game</h1>
+		</div>
+		<br/>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h2 class="text-center dblsizef">
+								Ramdom Number
+							</h2>
+						</div>
+						<div class="panel-body">
+							<h2 class="text-center letterlobster trpsizef">
+
+								<div id="drandomnumber"></div>
+
+							</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h2 class="text-center dblsizef">
+								Accumulated Number
+							</h2>
+						</div>
+						<div class="panel-body">
+							<h2 class="text-center letterlobster trpsizef">
+
+								<div id="dtargetnumber"></div>
+
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+
+					<div id="cristals"></div>	
+
+				</div>
+			</div>
+		</div>
+
+		<br/>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<button class="btn btn-success btn-lg" type="button">
+						Wins <span class="badge"><span id="dwins"></span></span>
+					</button>
+					<button class="btn btn-danger btn-lg" type="button">
+						Losses <span class="badge"><span id="dlosses"></span></span>
+					</button>
+				</div>
+				<div class="col-md-7">
+					<span class="lettercourgette">
+						<p>You will be given a random number at the start of the game.</p>
+						<br/>
+						<p>There are four crystals. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+						<br/>
+						<p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
+						<br/>
+						<p>The value of each crystal is hidden from you until you click on it.</p>
+						<br/>
+						<p>Each time when the game starts, the game will change the values of each crystal.</p>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<div class="container-fluid text-center">Copyright &copy; 2017 Hilton DCS</div>
+
+		<!-- Call the Javascript code -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 	</body>
 
